@@ -6,6 +6,7 @@ from Magazine.models import Posts
 def view(request,*args,**kwargs):
     return HttpResponse('<h1> Hello World </h1>')
 
+#another view
 def PostList(request,*arg,**kwargs):
     QSet = Posts.objects.all()
     return HttpResponse(Qset)
