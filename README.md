@@ -1,0 +1,2 @@
+# DjangoProjects
+Repo for DjangoProjects
