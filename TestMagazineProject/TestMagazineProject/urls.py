@@ -14,11 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from Magazine import views
+from django.urls import path ,re_path #used to be url
+from Magazine import views as m_views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('test/',views.view),
-    path('posts/',views.PostList)
+    path('test/',m_views.view),
+    path('posts/',m_views.PostList),
+    path('api/posts/',m_views.PostJson),
+    #path('reflect/<int:id>',views.Reflect),
+    re_path(r'reflect/(?P<pk>\d+)',m_views.Reflect) #pk=primarykey
 ]
